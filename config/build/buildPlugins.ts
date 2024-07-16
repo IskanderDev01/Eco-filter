@@ -38,12 +38,12 @@ export function buildPlugins({
                 },
             }),
         );
+        plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
+        );
     }
-    plugins.push(
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
-    );
     if (!isDev) {
         plugins.push(
             new MiniCssExtractPlugin({
