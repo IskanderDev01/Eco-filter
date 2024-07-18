@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { RoutePath } from '../routeConfig/routeConfig';
 import { TOKEN } from 'shared/const/localstorage';
-import { useGetMeApi } from 'features/LoginForm/models/api/getMeApi';
+import { useGetMeApi } from 'features/LoginForm/api/getMeApi';
 import { useEffect } from 'react';
 
 export function RequireAuth({ children }: { children: JSX.Element }) {

@@ -3,7 +3,7 @@ import {
     useDeletClients,
     useGetClients,
     useUpdateItem,
-} from 'pages/MainPage/model/api/clientsApi';
+} from 'pages/MainPage/api/clientsApi';
 import {
     getDays,
     getPage,
@@ -117,7 +117,7 @@ const MainPage = () => {
             title: 'Телефон',
             dataIndex: 'phone',
             key: 'phone',
-            render: (phone) => <span>+998{phone}</span>
+            render: (phone) => <span>+998{phone}</span>,
         },
         {
             title: 'Адрес',

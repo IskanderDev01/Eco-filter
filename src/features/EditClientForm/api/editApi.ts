@@ -1,5 +1,5 @@
 import { rtkApi } from 'shared/api/rtkApi';
-import { UserEdit, UserResponse } from '../types/editType';
+import { UserResponse } from '../models/types/editType'
 
 const editApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({

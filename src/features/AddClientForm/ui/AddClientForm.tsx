@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Select } from 'antd';
-import { useCreateClient } from '../models/api/addClientApi';
+import { useCreateClient } from '../api/addClientApi';
 import { Button, Input, Modal } from 'shared/ui/AntD/AntD'
 import { validatePhone } from 'shared/lib/validateForm/validateForm'
 

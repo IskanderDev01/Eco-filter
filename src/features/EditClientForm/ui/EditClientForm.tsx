@@ -1,11 +1,11 @@
 import { Form } from 'antd';
 import { validatePhone } from 'shared/lib/validateForm/validateForm';
 import { Button, Input, Modal } from 'shared/ui/AntD/AntD';
-import { getUserEdit, updateClient } from '../models/api/editApi';
 import { useSelector } from 'react-redux';
 import { getId } from 'pages/MainPage/model/selectors/clientsSelectors';
 import { memo, useEffect } from 'react';
 import { UserEdit } from '../models/types/editType';
+import { getUserEdit, updateClient } from '../api/editApi'
 
 interface EditClientProps {
     isOpen: boolean;

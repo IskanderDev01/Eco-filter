@@ -1,7 +1,7 @@
 import { memo, lazy } from 'react';
 import Form, { FormProps } from 'antd/es/form';
 import Input from 'antd/es/input';
-import { useLoginApi } from 'features/LoginForm/models/api/loginApi';
+import { useLoginApi } from 'features/LoginForm/api/loginApi';
 import { validate } from 'shared/lib/validate/validate';
 import { TOKEN } from 'shared/const/localstorage';
 import { useNavigate } from 'react-router-dom';

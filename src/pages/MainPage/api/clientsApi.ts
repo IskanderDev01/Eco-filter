@@ -1,5 +1,5 @@
 import { rtkApi } from 'shared/api/rtkApi';
-import { ClientData } from '../types/client';
+import { ClientData } from '../model/types/client';
 interface GetUsersQueryParams {
     sort: string;
     search: string;
