@@ -20,13 +20,9 @@ const LoginForm = () => {
         email,
         password,
     }) => {
-        try {
-            const res = await login({ email, password }).unwrap();
-            localStorage.setItem(TOKEN, res.token);
-            navigate('/');
-        } catch (e) {
-            localStorage.removeItem(TOKEN);
-        }
+        const res = await login({ email, password }).unwrap();
+        localStorage.setItem(TOKEN, res.token);
+        navigate('/');
     };
 
     return (
