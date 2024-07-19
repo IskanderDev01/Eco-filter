@@ -1,7 +1,7 @@
-import { memo, lazy } from 'react';
+import { memo, lazy, useEffect } from 'react';
 import Form, { FormProps } from 'antd/es/form';
 import Input from 'antd/es/input';
-import { useLoginApi } from 'features/LoginForm/api/loginApi';
+import { useLoginMutation } from 'features/LoginForm/api/loginApi';
 import { validate } from 'shared/lib/validate/validate';
 import { TOKEN } from 'shared/const/localstorage';
 import { useNavigate } from 'react-router-dom';
@@ -13,17 +13,22 @@ type FieldType = {
 };
 
 const LoginForm = () => {
-    const [login, { isLoading, isError }] = useLoginApi();
+    const [login, { isLoading, isError, isSuccess, data }] = useLoginMutation();
     const navigate = useNavigate();
 
-    const onFinish: FormProps<FieldType>['onFinish'] = async ({
+    const onFinish: FormProps<FieldType>['onFinish'] = ({
         email,
         password,
     }) => {
-        const res = await login({ email, password }).unwrap();
-        localStorage.setItem(TOKEN, res.token);
-        navigate('/');
+        login({ email, password }).unwrap();
     };
+
+    useEffect(() => {
+        if (isSuccess) {
+            localStorage.setItem(TOKEN, String(data?.token));
+            navigate('/');
+        }
+    }, [isSuccess]);
 
     return (
         <div className="bg-slate-100 fixed top-0 z-50 left-0 w-full h-screen flex justify-center items-center">

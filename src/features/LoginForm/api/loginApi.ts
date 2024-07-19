@@ -19,4 +19,4 @@ const loginApi = rtkApi.injectEndpoints({
     }),
 });
 
-export const useLoginApi = loginApi.useLoginMutation;
+export const { useLoginMutation } = loginApi;

@@ -21,6 +21,7 @@ const Table = (props: TableProps) => {
             columns={columns}
             className={className}
             rowKey={rowKey}
+            scroll={{ x: true }}
             {...otherProps}
         />
     );
